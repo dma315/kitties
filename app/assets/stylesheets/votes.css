@@ -14,3 +14,7 @@
   width: auto;
   margin: 0 auto;
 }
+
+.cat-image:hover {
+  cursor: pointer;
+}
