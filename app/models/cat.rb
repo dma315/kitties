@@ -5,7 +5,7 @@ class Cat < ActiveRecord::Base
 
   def update_elo_score(opponent, win)
     k_factor = 32
-    p actual_score = win ? 1 : 0
+    actual_score = win ? 1 : 0
 
     my_score = self.elo_score
     opponent_score = opponent.elo_score
@@ -13,7 +13,7 @@ class Cat < ActiveRecord::Base
     expected_score = 1.0 / (1 + 10 **( (1.0 * score_differential) / 400))
 
     updated_score = my_score + k_factor * (actual_score - expected_score)
-    p updated_score
-    
+    self.elo_score = updated_score.to_i
+    self.save
   end
 end
