@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Cat.destroy_all
 
 urls = [
   "http://www.fndvisions.org/img/cutecat.jpg",
@@ -14,9 +15,7 @@ urls = [
   "http://cutecats.com/wp-content/uploads/2015/03/lily_5-515x276.jpg",
   "http://tonsofcats.com/wp-content/uploads/2013/08/eb6d9fe3e3c836711bd68bb045c55d6b.jpg",
   "http://www.laughspark.info/thumbfiles/705X705/cute-cats-image-playing-635757323663331714-15541.jpg",
-  "https://i.ytimg.com/vi/-HE3jj5Ah2M/maxresdefault.jpg",
-  "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTGOQjEGV1GX4ojraoBfGBUWRIRVK2xXu5b6LFxf0Q_tG2Hd03P",
-  "http://7-themes.com/data_images/out/5/6784028-cute-cats.jpg"
+  "https://i.ytimg.com/vi/-HE3jj5Ah2M/maxresdefault.jpg"
 ]
 
 urls.each do |url|
