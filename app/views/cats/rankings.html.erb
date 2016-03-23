@@ -1,0 +1,14 @@
+<div class="rankings-container col-md-8 col-md-offset-2">
+  <% @cats.each_with_index do |cat, index| %>
+    <div id="<%= cat.id %>" class="cat-thumbnail-container">
+      <div class="cat-thumbnail inline-block">
+        <img src="<%= cat.url %>">
+      </div>
+      <div class="cat-info inline-block">
+        <p>Rank: <%= index + 1 %></p>
+        <p>Name: <%= cat.name %></p>
+        <p>Score: <%= cat.elo_score %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
