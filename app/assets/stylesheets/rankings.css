@@ -1,0 +1,21 @@
+.cat-thumbnail-container {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid lightgrey;
+}
+
+.cat-thumbnail {
+  margin: 10px;
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+}
+
+.cat-info {
+  margin: 10px;
+}
+
+.cat-thumbnail img {
+  height: 100%;
+  width: auto;
+}
