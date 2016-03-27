@@ -26,10 +26,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro'
 gem 'rails_12factor', group: :production
 
-# Auth0 gems
-gem 'omniauth', '~> 1.2'
-gem 'omniauth-auth0', '~> 1.1'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
