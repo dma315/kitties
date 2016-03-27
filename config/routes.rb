@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   resources :votes, only: [:new, :create]
 
-  resources :sessions, only: [:new, :create]
+  get '/auth/instagram/callback', to: 'sessions#create'
+  resources :sessions, only: [:create]
 
   get 'cats/rankings' => 'cats#rankings'
   
