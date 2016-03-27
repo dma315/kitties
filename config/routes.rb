@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :votes, only: [:new, :create]
 
+  resources :sessions, only: [:new, :create]
+
   get 'cats/rankings' => 'cats#rankings'
   
   # The priority is based upon order of creation: first created -> highest priority.
