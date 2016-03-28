@@ -12,7 +12,7 @@
 <%= link_to "Rankings", cats_rankings_path %>
 
 <% if current_user %>
-  Welcome: <%= current_user.username %>
+  <%= link_to current_user.username, recent_photos_path(current_user) %>
 <% else %>
   <%= link_to "Instagram Login", "/auth/instagram" %>
 <% end %>

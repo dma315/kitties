@@ -1,0 +1,5 @@
+<div class="col-md-8 col-md-offset-2 instagrid">
+  <% @data.each do |image_hash| %>
+    <img class="insta-thumbnail" src="<%= image_hash["images"]["thumbnail"]["url"] %>" id="<%= image_hash["images"]["standard_resolution"]["url"] %>">
+  <% end %>
+</div>
