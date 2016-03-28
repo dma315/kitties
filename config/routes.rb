@@ -2,7 +2,13 @@ Rails.application.routes.draw do
 
   root 'votes#new'
 
+  get 'users/:id/recent-photos' => 'users#recent_photos', as: :recent_photos
+
   resources :votes, only: [:new, :create]
+
+  get '/auth/instagram/callback', to: 'sessions#create'
+  resources :sessions, only: [:create]
+
 
   get 'cats/rankings' => 'cats#rankings'
   

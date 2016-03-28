@@ -1,0 +1,9 @@
+.instagrid {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.insta-thumbnail {
+  margin: 10px;
+}
