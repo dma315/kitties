@@ -10,7 +10,12 @@
 
 <%= link_to "Vote!", root_path %>
 <%= link_to "Rankings", cats_rankings_path %>
-<%= link_to "Instgram Login", "/auth/instagram" %>
+
+<% if current_user %>
+  Welcome: <%= current_user.username %>
+<% else %>
+  <%= link_to "Instagram Login", "/auth/instagram" %>
+<% end %>
 
 <%= yield %>
 
