@@ -1,0 +1,24 @@
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.footer {
+  height: 50px;
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.push {
+  height: 70px;
+}
+
+.footer > .container {
+  text-align: center;
+}
