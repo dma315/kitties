@@ -16,6 +16,5 @@ class UsersController < ApplicationController
     response = http.request(request)
     response_hash = JSON.parse(response.body)
     @data = response_hash["data"]
-    p @data[0]
   end
 end
