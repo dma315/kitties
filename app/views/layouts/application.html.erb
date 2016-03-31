@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kitties</title>
+  <title>ELO Kitty</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -26,6 +26,13 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="<%= about_path %>">About ELO Kitty</a></li>
+              <li><a href="<%= privacy_path %>">Privacy Policy</a></li>
+            </ul>
+          </li>
           <li><a href="<%= root_path %>">Vote! <span class="sr-only">(current)</span></a></li>
           <li><a href="<%= cats_rankings_path %>">Rankings </a></li>
           <% if current_user %>
@@ -34,18 +41,6 @@
           <% else %>
             <li><%= link_to "Instagram Login", "/auth/instagram" %></li>
           <% end %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -56,14 +51,13 @@
   <div class="push">
   </div>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&#169; ELO Kitty 2016</p>
-    </div>
-  </footer>
-
 </div>
 
+<footer class="footer">
+  <div class="container">
+    <p>&#169; ELO Kitty 2016</p>
+  </div>
+</footer>
 
 
 </body>

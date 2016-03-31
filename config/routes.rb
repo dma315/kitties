@@ -2,16 +2,23 @@ Rails.application.routes.draw do
 
   root 'votes#new'
 
+  # Users
   get 'users/:id/recent-photos' => 'users#recent_photos', as: :recent_photos
 
+  # Votes
   resources :votes, only: [:new, :create]
 
+  # Session info
   get '/auth/instagram/callback', to: 'sessions#create'
   resources :sessions, only: [:create]
   delete 'sessions/logout' => 'sessions#destroy', as: :logout
 
-
+  # Cats
   get 'cats/rankings' => 'cats#rankings'
+
+  # Static Pages
+  get 'privacy' => 'static_pages#privacy'
+  get 'about' => 'static_pages#about'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
