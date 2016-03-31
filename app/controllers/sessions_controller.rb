@@ -14,7 +14,12 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_by(uid: insta_hash["uid"])
     @user.update_attributes(insta_hash)
     self.current_user = @user
-    redirect_to '/'
+    redirect_to root_path
+  end
+
+  def destroy
+    session.delete(:user_id)
+    redirect_to root_path
   end
 
   protected
