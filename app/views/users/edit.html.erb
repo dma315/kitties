@@ -25,12 +25,7 @@
           <h4 class="modal-title">Upload your kitty!</h4>
         </div>
         <div class="modal-body">
-          <div class="container" id="cat-upload-errors">
-            <ul>
-              <li>Test</li>
-              <li>Test</li>
-            </ul>
-          </div>
+          <div class="alert alert-danger" id="cat-upload-errors"></div>
           <%= form_for @cat, remote: true do |f| %>
             <%= f.text_field :url, type: "hidden", id: "full-url" %>
             <%= f.text_field :thumbnail_url, type: "hidden", id: "thumbnail-url" %>

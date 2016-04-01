@@ -1,6 +1,11 @@
 <% if @cat.errors.any? %>
-  var errors = []
+  var $errors = $("#cat-upload-errors")
+  $errors.children().remove();
   <% @cat.errors.full_messages.each do |error| %>
-    errors.push("<%= error %>")
+    var $p = $("<p>").text("<%= error %>")
+    $errors.append($p)
   <% end %>
+  $errors.fadeIn()
+<% else %>
+
 <% end %>

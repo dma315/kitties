@@ -17,6 +17,6 @@ $(document).ready(function() {
   })
 
   // Change URL of kitty upload form
-  $('.insta-thumbnail-overlay').on('click', injectCatURLsToForm)
+  $('.insta-thumbnail-overlay').on('click', prepareCatUploadForm)
 
 });
