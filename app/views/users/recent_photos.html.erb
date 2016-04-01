@@ -1,5 +1,18 @@
-<div class="col-md-8 col-md-offset-2 instagrid">
-  <% @data.each do |image_hash| %>
-    <img class="insta-thumbnail" src="<%= image_hash["images"]["thumbnail"]["url"] %>" id="<%= image_hash["images"]["standard_resolution"]["url"] %>">
-  <% end %>
+<div class="container">
+
+  <div class="center-text">
+    <h3>Select a photo from your recent Instagram posts</h3>
+  </div>
+
+  <div class="col-md-8 col-md-offset-2 instagrid">
+    <% @data.each do |image_hash| %>
+      <div class="insta-thumbnail-container">
+        <img class="insta-thumbnail" src="<%= image_hash["images"]["thumbnail"]["url"] %>" id="<%= image_hash["images"]["standard_resolution"]["url"] %>">
+        <div class="insta-thumbnail-overlay">
+          <span class="glyphicon glyphicon-plus"></span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
 </div>
