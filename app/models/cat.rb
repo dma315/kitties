@@ -4,6 +4,10 @@ class Cat < ActiveRecord::Base
   has_many :losing_votes, foreign_key: :loser_id, class_name: 'Vote'
   belongs_to :owner, class_name: 'User'
 
+  validates :url, :thumbnail_url, presence: true
+  validates :name, presence: { message: "cannot be blank" }
+  validates :terms_accepted, inclusion: {in: [true], message: "cannot be unchecked"}
+
   def update_elo_score(opponent, win)
     k_factor = 32
     actual_score = win ? 1 : 0
@@ -18,7 +22,5 @@ class Cat < ActiveRecord::Base
     self.save
   end
 
-  def create
-    redirect_to recent_photos_path
-  end
+
 end
