@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   require 'net/http'
   require 'json'
   
-  def recent_photos
+  def edit
     @cat = Cat.new
     current_user_token = current_user.token
     recent_photos_endpoint = "https://api.instagram.com/v1/users/self/media/recent/?access_token=" + current_user_token

@@ -17,4 +17,8 @@ class Cat < ActiveRecord::Base
     self.elo_score = updated_score.to_i
     self.save
   end
+
+  def create
+    redirect_to recent_photos_path
+  end
 end
