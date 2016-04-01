@@ -1,0 +1,12 @@
+<% if @cat.errors.any? %>
+  var $errors = $("#cat-upload-errors")
+  $errors.children().remove();
+  <% @cat.errors.full_messages.each do |error| %>
+    var $p = $("<p>").text("<%= error %>")
+    $errors.append($p)
+  <% end %>
+  $errors.fadeIn()
+<% else %>
+  $("#photo-upload-modal").modal("hide")
+  resetCatModalForm();
+<% end %>

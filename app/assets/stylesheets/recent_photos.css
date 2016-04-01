@@ -4,6 +4,30 @@
   flex-flow: row wrap;
 }
 
+.insta-thumbnail-container {
+  position: relative;
+}
+
 .insta-thumbnail {
   margin: 10px;
+}
+
+.insta-thumbnail-overlay {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: transparent;
+  font-size: 2em;
+}
+
+.insta-thumbnail-overlay:hover {
+  cursor: pointer;
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  color: white;
 }

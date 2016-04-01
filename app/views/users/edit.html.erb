@@ -1,0 +1,49 @@
+<div class="container">
+
+  <div class="center-text">
+    <h3>Select a photo from your recent Instagram posts</h3>
+  </div>
+
+  <div class="col-md-8 col-md-offset-2 instagrid">
+    <% @data.each do |image_hash| %>
+      <div class="insta-thumbnail-container">
+        <img class="insta-thumbnail" src="<%= image_hash["images"]["thumbnail"]["url"] %>" >
+        <div class="insta-thumbnail-overlay" data-toggle="modal" data-target="#photo-upload-modal" data-full-url="<%= image_hash["images"]["standard_resolution"]["url"] %>">
+          <span class="glyphicon glyphicon-plus"></span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- This is a generic modal and form. The custom URL for the image clicked on is injected as a hidden field on click via Javascript in a separate file -->
+
+  <div id="photo-upload-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Upload your kitty!</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger" id="cat-upload-errors"></div>
+          <%= form_for @cat, remote: true do |f| %>
+            <%= f.text_field :url, type: "hidden", id: "full-url" %>
+            <%= f.text_field :thumbnail_url, type: "hidden", id: "thumbnail-url" %>
+            <div class="form-group">
+              <%= f.label "Kitty's Name" %>
+              <%= f.text_field :name, placeholder: "e.g. Fuzzball", class: "form-control" %> 
+            </div>
+            <div class="form-group">
+              <%= f.check_box :terms_accepted, {}, true, false %> By checking this box, I agree to to the upload terms and <%= link_to "privacy policy", privacy_path, :target => "_blank" %> of ELO Kitty
+            </div>
+            <%= f.submit "Submit Kitty", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'votes#new'
 
   # Users
-  get 'users/:id/recent-photos' => 'users#recent_photos', as: :recent_photos
+  resources :users, only: [:edit]
 
   # Votes
   resources :votes, only: [:new, :create]
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete 'sessions/logout' => 'sessions#destroy', as: :logout
 
   # Cats
+  resources :cats, only: [:create]
   get 'cats/rankings' => 'cats#rankings'
 
   # Static Pages

@@ -36,7 +36,7 @@
           <li><a href="<%= root_path %>">Vote! <span class="sr-only">(current)</span></a></li>
           <li><a href="<%= cats_rankings_path %>">Rankings </a></li>
           <% if current_user %>
-            <li><%= link_to current_user.username, recent_photos_path(current_user) %></li>
+            <li><%= link_to current_user.username, edit_user_path(current_user) %></li>
             <li><%= link_to "Logout", logout_path, method: "delete" %></li>
           <% else %>
             <li><%= link_to "Instagram Login", "/auth/instagram" %></li>
