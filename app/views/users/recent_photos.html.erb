@@ -22,7 +22,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 class="modal-title">Upload your kitty!</h4>
         </div>
         <div class="modal-body">
           <%= form_for @cat do |f| %>
@@ -35,7 +35,7 @@
             <div class="form-group">
               <%= f.check_box :terms_accepted, {}, true, false %> By checking this box, I agree to to the upload terms and <%= link_to "privacy policy", privacy_path, :target => "_blank" %> of ELO Kitty
             </div>
-            <%= f.submit "Upload Kitty", class: "btn btn-primary" %>
+            <%= f.submit "Submit Kitty", class: "btn btn-primary" %>
           <% end %>
         </div>
         <div class="modal-footer">
