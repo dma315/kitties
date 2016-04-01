@@ -23,10 +23,18 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= form_for @cat do |f| %>
+            <div class="form-group">
+              <%= f.label "Kitty's Name" %>
+              <%= f.text_field :name, placeholder: "e.g. Fuzzball", class: "form-control" %> 
+            </div>
+            <div class="checkbox">
+              <label>
+                  <input type="checkbox"/> By checking this box, I agree to the terms of upload and <a href="<%= privacy_path %>">privacy policy</a> of ELO Kitty
+              </label>
+            </div>
+            <%= f.submit "Upload Kitty", class: "btn btn-primary" %>
+          <% end %>
         </div>
       </div>
     </div>

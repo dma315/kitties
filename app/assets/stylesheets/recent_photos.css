@@ -28,7 +28,6 @@
 
 .insta-thumbnail-overlay:hover {
   cursor: pointer;
-  /*background-color: black;*/
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
   color: white;
 }

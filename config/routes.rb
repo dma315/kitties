@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete 'sessions/logout' => 'sessions#destroy', as: :logout
 
   # Cats
+  resources :cats, only: [:create]
   get 'cats/rankings' => 'cats#rankings'
 
   # Static Pages
