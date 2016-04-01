@@ -6,12 +6,10 @@ class CatsController < ApplicationController
 
   def create
     @cat = current_user.cats.new(cat_params)
+    @cat.elo_score = 1000
+    @cat.save
     respond_to do |format|
-      if @cat.save
-        format.js {}
-      else
-        format.js {}
-      end
+      format.js {}
     end
   end
 
