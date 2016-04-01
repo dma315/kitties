@@ -7,13 +7,15 @@
   <div class="col-md-8 col-md-offset-2 instagrid">
     <% @data.each do |image_hash| %>
       <div class="insta-thumbnail-container">
-        <img class="insta-thumbnail" src="<%= image_hash["images"]["thumbnail"]["url"] %>" id="<%= image_hash["images"]["standard_resolution"]["url"] %>">
-        <div class="insta-thumbnail-overlay" data-toggle="modal" data-target="#photo-upload-modal">
+        <img class="insta-thumbnail" src="<%= image_hash["images"]["thumbnail"]["url"] %>" >
+        <div class="insta-thumbnail-overlay" data-toggle="modal" data-target="#photo-upload-modal" data-full-url="<%= image_hash["images"]["standard_resolution"]["url"] %>">
           <span class="glyphicon glyphicon-plus"></span>
         </div>
       </div>
     <% end %>
   </div>
+
+  <!-- This is a generic modal and form. The custom URL for the image clicked on is injected as a hidden field on click via Javascript in a separate file -->
 
   <div id="photo-upload-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -24,6 +26,8 @@
         </div>
         <div class="modal-body">
           <%= form_for @cat do |f| %>
+            <%= f.text_field :url, type: "hidden", id: "full-url" %>
+            <%= f.text_field :thumbnail_url, type: "hidden", id: "thumbnail-url" %>
             <div class="form-group">
               <%= f.label "Kitty's Name" %>
               <%= f.text_field :name, placeholder: "e.g. Fuzzball", class: "form-control" %> 
@@ -33,6 +37,9 @@
             </div>
             <%= f.submit "Upload Kitty", class: "btn btn-primary" %>
           <% end %>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

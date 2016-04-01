@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(version: 20160401160837) do
   create_table "cats", force: :cascade do |t|
     t.string   "url",            null: false
     t.string   "name"
-    t.text     "comment"
     t.integer  "elo_score",      null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "owner_id"
     t.boolean  "terms_accepted"
+    t.string   "thumbnail_url"
   end
 
   add_index "cats", ["owner_id"], name: "index_cats_on_owner_id", using: :btree
