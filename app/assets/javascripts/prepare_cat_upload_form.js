@@ -1,5 +1,5 @@
 function prepareCatUploadForm() {
-  $("#cat-upload-errors").hide().text("")
+  resetCatModalForm();
   injectCatURLs($(this))
 }
 
