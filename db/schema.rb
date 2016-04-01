@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328010600) do
+ActiveRecord::Schema.define(version: 20160401160837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,10 @@ ActiveRecord::Schema.define(version: 20160328010600) do
     t.integer  "elo_score",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "owner_id"
   end
+
+  add_index "cats", ["owner_id"], name: "index_cats_on_owner_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
