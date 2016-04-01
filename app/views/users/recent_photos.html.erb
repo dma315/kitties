@@ -28,10 +28,8 @@
               <%= f.label "Kitty's Name" %>
               <%= f.text_field :name, placeholder: "e.g. Fuzzball", class: "form-control" %> 
             </div>
-            <div class="checkbox">
-              <label>
-                  <input type="checkbox"/> By checking this box, I agree to the terms of upload and <a href="<%= privacy_path %>">privacy policy</a> of ELO Kitty
-              </label>
+            <div class="form-group">
+              <%= f.check_box :terms_accepted, {}, true, false %> By checking this box, I agree to to the upload terms and <%= link_to "privacy policy", privacy_path, :target => "_blank" %> of ELO Kitty
             </div>
             <%= f.submit "Upload Kitty", class: "btn btn-primary" %>
           <% end %>
