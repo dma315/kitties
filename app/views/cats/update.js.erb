@@ -1,0 +1,5 @@
+var catID = "#<%= @cat.id %>"
+$(catID).data('name', "<%= @cat.name %>")
+clearEditCatForm()
+$('#edit-photo-modal').modal("hide")
+
