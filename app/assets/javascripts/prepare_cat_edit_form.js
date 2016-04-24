@@ -5,3 +5,7 @@ function prepareCatEditForm() {
   $("#edit-cat-form").attr('action', catURL)
   $("#cat-name").attr('value', catName)
 }
+
+function clearEditCatForm() {
+  $('#edit-cat-form')[0].reset();
+}
