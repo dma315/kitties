@@ -1,4 +1,5 @@
 function prepareCatUploadForm() {
+  // console.log("hello")
   resetCatModalForm();
   injectCatURLs($(this))
 }

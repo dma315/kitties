@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
   // Click to vote functionality
-  $('.left-box').on('click', voteLeftBox);
-  $('.right-box').on('click', voteRightBox);  
+  $(document).on('click', '.left-box', voteLeftBox);
+  $(document).on('click', '.right-box', voteRightBox);  
 
   // Keyboard voting functionality
   $(document).on('keyup', function(event) {
@@ -17,6 +17,6 @@ $(document).ready(function() {
   })
 
   // Change URL of kitty upload form
-  $('.insta-thumbnail-overlay').on('click', prepareCatUploadForm)
+  $(document).on('click', '.insta-thumbnail-overlay', prepareCatUploadForm)
 
 });
