@@ -13,6 +13,14 @@ class CatsController < ApplicationController
     end
   end
 
+  def update
+    @cat = Cat.find(params[:id])
+    @cat.update_attributes(cat_params)
+    respond_to do |format|
+      format.js {}
+    end
+  end
+
   private
 
   def cat_params

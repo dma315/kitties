@@ -19,4 +19,7 @@ $(document).ready(function() {
   // Change URL of kitty upload form
   $(document).on('click', '.insta-thumbnail-overlay', prepareCatUploadForm)
 
+  // Change URL of kitty upload form
+  $(document).on('click', '.cat-submission-overlay', prepareCatEditForm)
+
 });
