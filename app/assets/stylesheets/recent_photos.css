@@ -12,10 +12,9 @@
   margin: 10px;
 }
 
-.insta-thumbnail-overlay {
+.insta-thumbnail-overlay, .cat-submission-overlay {
   height: 150px;
   width: 150px;
-  margin: 10px;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -26,7 +25,11 @@
   font-size: 2em;
 }
 
-.insta-thumbnail-overlay:hover {
+.insta-thumbnail-overlay {
+  margin: 10px;
+}
+
+.insta-thumbnail-overlay:hover, .cat-submission-overlay:hover {
   cursor: pointer;
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
   color: white;
@@ -43,18 +46,4 @@
 
 .cat-submission {
   max-width: 100%;
-}
-
-.cat-submission-overlay {
-  height: 150px;
-  width: 150px;
-  /*margin: 10px;*/
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: transparent;
-  font-size: 2em;
 }

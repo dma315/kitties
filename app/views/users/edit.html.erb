@@ -6,21 +6,24 @@
     </div>
 
     <div class="col-md-8 col-md-offset-2 instagrid">
+      
       <% @current_submissions.each do |cat| %>
         <div class="cat-submission-container">
           <img class="cat-submission" src="<%= cat.url %>" >
-          <div class="cat-submission-overlay" data-toggle="modal" data-target="#photo-upload-modal">
-            <span class="glyphicon glyphicon-plus"></span>
+          <div class="cat-submission-overlay" data-toggle="modal" data-target="#submission-modal">
+            <span class="glyphicon glyphicon-pencil"></span>
           </div>
         </div>
       <% end %>
+
       <% (5 - @current_submissions.length).times do %>
         <div class="cat-submission-container">
-          <div class="cat-submission-overlay" data-toggle="modal" data-target="#photo-upload-modal">
-            <span class="glyphicon glyphicon-plus"></span>
+          <div class="cat-submission-overlay" data-toggle="modal" data-target="#tbd-modal-if-any-modal">
+            <span class="glyphicon glyphicon-pencil"></span>
           </div>
         </div>
       <% end %>
+
     </div>
   </div>
 
@@ -34,7 +37,7 @@
         <div class="insta-thumbnail-container">
           <img class="insta-thumbnail" src="<%= image_hash["images"]["thumbnail"]["url"] %>" >
           <div class="insta-thumbnail-overlay" data-toggle="modal" data-target="#photo-upload-modal" data-full-url="<%= image_hash["images"]["standard_resolution"]["url"] %>">
-            <span class="glyphicon glyphicon-plus"></span>
+            <span class="glyphicon glyphicon-plus-sign"></span>
           </div>
         </div>
       <% end %>
