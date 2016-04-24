@@ -1,18 +1,44 @@
 <div class="container">
 
-  <div class="center-text">
-    <h3>Select a photo from your recent Instagram posts</h3>
+  <div class="container">
+    <div class="center-text">
+      <h3>Your current submissions</h3>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2 instagrid">
+      <% @current_submissions.each do |cat| %>
+        <div class="cat-submission-container">
+          <img class="cat-submission" src="<%= cat.url %>" >
+          <div class="cat-submission-overlay" data-toggle="modal" data-target="#photo-upload-modal">
+            <span class="glyphicon glyphicon-plus"></span>
+          </div>
+        </div>
+      <% end %>
+      <% (5 - @current_submissions.length).times do %>
+        <div class="cat-submission-container">
+          <div class="cat-submission-overlay" data-toggle="modal" data-target="#photo-upload-modal">
+            <span class="glyphicon glyphicon-plus"></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <div class="col-md-8 col-md-offset-2 instagrid">
-    <% @data.each do |image_hash| %>
-      <div class="insta-thumbnail-container">
-        <img class="insta-thumbnail" src="<%= image_hash["images"]["thumbnail"]["url"] %>" >
-        <div class="insta-thumbnail-overlay" data-toggle="modal" data-target="#photo-upload-modal" data-full-url="<%= image_hash["images"]["standard_resolution"]["url"] %>">
-          <span class="glyphicon glyphicon-plus"></span>
+  <div class="container">
+    <div class="center-text">
+      <h3>Select a photo from your recent Instagram posts</h3>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2 instagrid">
+      <% @insta_photos.each do |image_hash| %>
+        <div class="insta-thumbnail-container">
+          <img class="insta-thumbnail" src="<%= image_hash["images"]["thumbnail"]["url"] %>" >
+          <div class="insta-thumbnail-overlay" data-toggle="modal" data-target="#photo-upload-modal" data-full-url="<%= image_hash["images"]["standard_resolution"]["url"] %>">
+            <span class="glyphicon glyphicon-plus"></span>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 
   <!-- This is a generic modal and form. The custom URL for the image clicked on is injected as a hidden field on click via Javascript in a separate file -->

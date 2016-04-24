@@ -16,6 +16,8 @@ class UsersController < ApplicationController
     request = Net::HTTP::Get.new(uri.request_uri)
     response = http.request(request)
     response_hash = JSON.parse(response.body)
-    @data = response_hash["data"]
+    @insta_photos = response_hash["data"]
+
+    @current_submissions = current_user.cats
   end
 end
