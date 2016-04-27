@@ -93,6 +93,13 @@
           <% end %>
         </div>
         <div class="modal-footer">
+            <%= button_to "Delete Image",
+                          { action: "destroy", controller: "cats" },
+                          form_class: "inline",
+                          method: :delete, 
+                          data: { confirm: "Are you sure?" },
+                          class: "btn btn-danger inline-block",
+                          form: { id: "delete-cat-button" } %>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>

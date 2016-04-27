@@ -21,6 +21,10 @@ class CatsController < ApplicationController
     end
   end
 
+  def destroy
+    redirect_to edit_user_path(current_user)
+  end
+
   private
 
   def cat_params
