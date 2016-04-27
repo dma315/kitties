@@ -2,7 +2,7 @@
 
   <div class="container">
     <div class="center-text">
-      <h3>Your current submissions</h3>
+      <h3>Your Current Submissions (Limit 5)</h3>
     </div>
 
     <div class="col-md-8 col-md-offset-2 instagrid">
@@ -11,14 +11,6 @@
         <div class="cat-submission-container" id="<%= cat.id %>" data-id="<%= cat.id %>" data-name="<%= cat.name %>">
           <img class="cat-submission" src="<%= cat.url %>">
           <div class="cat-submission-overlay" data-toggle="modal" data-target="#edit-photo-modal">
-            <span class="glyphicon glyphicon-pencil"></span>
-          </div>
-        </div>
-      <% end %>
-
-      <% (5 - @current_submissions.length).times do %>
-        <div class="cat-submission-container">
-          <div class="cat-submission-overlay" data-toggle="modal" data-target="#tbd-modal-if-any-modal">
             <span class="glyphicon glyphicon-pencil"></span>
           </div>
         </div>
