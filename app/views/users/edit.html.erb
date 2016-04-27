@@ -5,7 +5,7 @@
       <h3>Your Current Submissions (Limit 5)</h3>
     </div>
 
-    <div class="col-md-8 col-md-offset-2 instagrid">
+    <div class="col-md-8 col-md-offset-2 thumbnail-grid" id="submitted-cats">
       
       <% @current_submissions.each do |cat| %>
         <%= render partial: "cats/submitted_cat", locals: { cat: cat } %> 
@@ -19,7 +19,7 @@
       <h3>Select a photo from your recent Instagram posts</h3>
     </div>
 
-    <div class="col-md-8 col-md-offset-2 instagrid">
+    <div class="col-md-8 col-md-offset-2 thumbnail-grid">
       <% @insta_photos.each do |image_hash| %>
         <div class="insta-thumbnail-container">
           <img class="insta-thumbnail" src="<%= image_hash["images"]["thumbnail"]["url"] %>" >
