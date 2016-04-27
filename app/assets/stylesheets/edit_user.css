@@ -1,4 +1,4 @@
-.instagrid {
+.thumbnail-grid {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -39,7 +39,6 @@
   height: 150px;
   width: 150px;
   margin: 10px;
-  border: 1px solid black;
   overflow: hidden;
   position: relative;
 }
