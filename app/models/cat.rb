@@ -8,7 +8,7 @@ class Cat < ActiveRecord::Base
   validates :name, presence: { message: "cannot be blank" }
   validates :terms_accepted, inclusion: {in: [true], message: "cannot be unchecked"}
 
-  validate :limit_five_cats
+  validate :limit_five_cats, :on => :create
 
   def update_elo_score(opponent, win)
     k_factor = 32
