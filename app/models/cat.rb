@@ -21,7 +21,7 @@ class Cat < ActiveRecord::Base
 
     updated_score = my_score + k_factor * (actual_score - expected_score)
     self.elo_score = updated_score.to_i
-    self.save
+    self.save!
   end
 
   private
