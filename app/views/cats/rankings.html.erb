@@ -1,13 +1,14 @@
 <div class="rankings-container col-md-8 col-md-offset-2">
   <% @cats.each_with_index do |cat, index| %>
-    <div id="<%= cat.id %>" class="cat-thumbnail-container">
-      <div class="cat-thumbnail inline-block">
-        <img src="<%= cat.url %>">
+    <div class="cat-ranking-container">
+      <div class="cat-ranking-image-container inline-block">
+        <img class="cat-ranking-image" src="<%= cat.url %>">
       </div>
-      <div class="cat-info inline-block">
-        <p>Rank: <%= index + 1 %></p>
-        <p>Name: <%= cat.name %></p>
-        <p>Score: <%= cat.elo_score %></p>
+      <div class="cat-ranking-info-container">
+        <p><span class="bold">Rank:</span> <%= index + 1 %></p>
+        <p><span class="bold">Name:</span> <%= cat.name %></p>
+        <p><span class="bold">Score:</span> <%= cat.elo_score %></p>
+        <p><span class="bold">IG:</span> <a href="http://www.instagram.com/<%= cat.owner.username %>"><%= cat.owner.username %></a></p>
       </div>
     </div>
   <% end %>

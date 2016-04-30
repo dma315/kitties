@@ -1,21 +1,31 @@
-.cat-thumbnail-container {
+.cat-ranking-container {
+  width: 100%;
+  display: flex;
   margin: 10px;
-  padding: 10px;
+}
+
+.cat-ranking-image-container, .cat-ranking-info-container {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.cat-ranking-image-container {
+  max-height: 200px;
+  overflow: hidden;
   border: 1px solid lightgrey;
 }
 
-.cat-thumbnail {
-  margin: 10px;
-  width: 75px;
-  height: 75px;
-  overflow: hidden;
+.cat-ranking-info-container {
+  padding: 20px;
+  font-size: 1.25em;
 }
 
-.cat-info {
-  margin: 10px;
+.cat-ranking-image {
+  object-fit: cover;
+  width: 100%;
+  max-height: 200px;
 }
 
-.cat-thumbnail img {
-  height: 100%;
-  width: auto;
+#submitted-cats {
+  border-bottom: 1px solid lightgrey;
 }
