@@ -6,12 +6,18 @@
 
 .cat-ranking-image-container, .cat-ranking-info-container {
   width: 50%;
-  border: 1px solid lightgrey;
-  display: flex;
+  box-sizing: border-box;
 }
 
 .cat-ranking-image-container {
   max-height: 200px;
+  overflow: hidden;
+  border: 1px solid lightgrey;
+}
+
+.cat-ranking-info-container {
+  padding: 20px;
+  font-size: 1.25em;
 }
 
 .cat-ranking-image {

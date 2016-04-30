@@ -4,7 +4,11 @@
       <div class="cat-ranking-image-container inline-block">
         <img class="cat-ranking-image" src="<%= cat.url %>">
       </div>
-      <div class="cat-ranking-info-container inline-block">
+      <div class="cat-ranking-info-container">
+        <p><span class="bold">Rank:</span> <%= index + 1 %></p>
+        <p><span class="bold">Name:</span> <%= cat.name %></p>
+        <p><span class="bold">Score:</span> <%= cat.elo_score %></p>
+        <p><span class="bold">IG:</span> <a href="http://www.instagram.com/<%= cat.owner.username %>"><%= cat.owner.username %></a></p>
       </div>
     </div>
   <% end %>
