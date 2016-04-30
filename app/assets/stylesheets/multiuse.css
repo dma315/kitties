@@ -13,3 +13,7 @@
 .inline {
   display: inline;
 }
+
+.show-border {
+  border: 1px solid black;
+}

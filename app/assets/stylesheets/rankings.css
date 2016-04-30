@@ -1,21 +1,21 @@
-.cat-thumbnail-container {
+.cat-ranking-container {
+  width: 100%;
+  display: flex;
   margin: 10px;
-  padding: 10px;
+}
+
+.cat-ranking-image-container, .cat-ranking-info-container {
+  width: 50%;
   border: 1px solid lightgrey;
+  display: flex;
 }
 
-.cat-thumbnail {
-  margin: 10px;
-  width: 75px;
-  height: 75px;
-  overflow: hidden;
+.cat-ranking-image-container {
+  max-height: 200px;
 }
 
-.cat-info {
-  margin: 10px;
-}
-
-.cat-thumbnail img {
-  height: 100%;
-  width: auto;
+.cat-ranking-image {
+  object-fit: cover;
+  width: 100%;
+  max-height: 200px;
 }

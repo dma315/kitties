@@ -1,7 +1,7 @@
 class CatsController < ApplicationController
 
   def rankings
-    @cats = Cat.all.order(elo_score: :desc)
+    @cats = Cat.order(elo_score: :desc).limit(10)
   end
 
   def create
