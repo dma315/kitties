@@ -31,7 +31,7 @@ class CatsController < ApplicationController
     return if Cat.count == 0
     @all_cats = Cat.limit(10).order("RANDOM()") # Make this the query below
     respond_to do |format|
-      format.json { render json: @all_cats }
+      format.json { render json: @all_cats, include: [:owner] }
     end
     # Random SQL rows for later
     # https://www.periscopedata.com/blog/how-to-sample-rows-in-sql-273x-faster.html
