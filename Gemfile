@@ -32,9 +32,7 @@ gem 'omniauth-instagram'
 # Bootstrap attempt again
 gem 'bootstrap-sass', '~> 3.3.6'
 
-group :assets do
-  gem 'ejs'
-end
+gem 'ejs'
 
 gem 'faker'
 
