@@ -2,12 +2,13 @@ class VotesController < ApplicationController
 
   def new
     return if Cat.count == 0
-    all_cats = Cat.all
-    @cat1 = all_cats.sample
-    @cat2 = all_cats.sample
-    while @cat1 == @cat2
-      @cat2 = all_cats.sample
-    end
+    all_cats = Cat.limit(100).order("RANDOM()")
+    # all_cats = Cat.all
+    # @cat1 = all_cats.sample
+    # @cat2 = all_cats.sample
+    # while @cat1 == @cat2
+    #   @cat2 = all_cats.sample
+    # end
   end
 
   def create
