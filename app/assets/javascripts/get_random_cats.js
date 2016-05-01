@@ -10,11 +10,11 @@ function getRandomCats(existingQueue) {
 function storeRandomCats(data, existingQueue) {
   if (existingQueue.length == 0) {
     existingQueue = data
-    console.log(existingQueue)
+    // console.log(existingQueue)
   } else {
     for (var i = 0; i < data.length; i++) {
       existingQueue.push(data[i])
     }
-    console.log(existingQueue)
+    // console.log(existingQueue)
   };
 }
