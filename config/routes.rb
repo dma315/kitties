@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # Cats
   resources :cats, only: [:create, :update, :destroy]
   get 'cats/rankings' => 'cats#rankings'
+  get 'cats/random_cats' => 'cats#random_cats'
 
   # Static Pages
   get 'privacy' => 'static_pages#privacy'
