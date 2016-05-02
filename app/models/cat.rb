@@ -8,7 +8,7 @@ class Cat < ActiveRecord::Base
   validates :name, presence: { message: "cannot be blank" }
   validates :terms_accepted, inclusion: {in: [true], message: "cannot be unchecked"}
 
-  validate :limit_five_cats, :on => :create
+  # validate :limit_five_cats, :on => :create
 
   def update_elo_score(opponent, win)
     k_factor = 32
@@ -17,7 +17,7 @@ class Cat < ActiveRecord::Base
     my_score = self.elo_score
     opponent_score = opponent.elo_score
     score_differential = opponent_score - my_score
-    expected_score = 1.0 / (1 + 10 **( (1.0 * score_differential) / 400))
+    expected_score = 1.0 / (1 + 10 ** ((1.0 * score_differential) / 400))
 
     updated_score = my_score + k_factor * (actual_score - expected_score)
     self.elo_score = updated_score.to_i

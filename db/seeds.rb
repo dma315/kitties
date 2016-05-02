@@ -18,8 +18,14 @@ urls = [
   "https://i.ytimg.com/vi/-HE3jj5Ah2M/maxresdefault.jpg"
 ]
 
-urls.each do |url|
-  Cat.create!(
-    url: url,
-    elo_score: 1000)
+20.times do 
+  urls.each do |url|
+    Cat.create!(
+      url: url,
+      name: Faker::Hipster.word,
+      elo_score: 1000,
+      owner_id: 1,
+      terms_accepted: true,
+      thumbnail_url: url)
+  end
 end
