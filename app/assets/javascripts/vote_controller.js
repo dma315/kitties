@@ -1,5 +1,5 @@
 function voteBox(direction) {
-  
+
   var current_page = window.location.href
   var results = {}
   var left_cat_id = $('.left-box').attr('id')

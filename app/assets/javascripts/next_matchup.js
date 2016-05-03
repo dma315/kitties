@@ -1,5 +1,9 @@
+// Pre Vote -> Generate array of 10, cache to 4
+// After Vote 1 -> Cache becomes 3, generate array of 10 more, cache to 8
+// Vote 2 -> Cache becomes 7, no generation of array, 
+
 function nextMatchup() {
-  if (CATARRAY.length <= 6) {
+  if (CATARRAY <= 4) {
     generateCatQueue().done(populateVoteBoxes);
   } else {
     populateVoteBoxes()
@@ -30,6 +34,6 @@ function populateVoteBoxes() {
     cat2: cat2
   }
   var html = JST['views/voting_boxes'](cats)
-  // console.log(html)
   $('#vote-container').append(html)
 }
+
