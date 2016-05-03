@@ -1,26 +1,28 @@
-<div class="col-md-6">
-  <div class="cat-image-container left-box" id="<%= cat1.id %>">
-    <img class="cat-image" src="<%= cat1.url %>">
+<div class="vote-boxes">
+  <div class="col-md-6">
+    <div class="cat-image-container left-box" id="<%= cat1.id %>">
+      <img class="cat-image" src="<%= cat1.url %>">
+    </div>
+    <div class="center-text">
+      <p><span class="bold">Kitty Name: </span><%= cat1.name %></p>
+      <p><span class="bold">IG: </span>
+        <a href="http://www.instagram.com/<%= cat1.owner.username %>">
+          <%= cat1.owner.username %>
+        </a>
+      </p>
+    </div>
   </div>
-  <div class="center-text">
-    <p><span class="bold">Kitty Name: </span><%= cat1.name %></p>
-    <p><span class="bold">IG: </span>
-      <a href="http://www.instagram.com/<%= cat1.owner.username %>">
-        <%= cat1.owner.username %>
-      </a>
-    </p>
-  </div>
-</div>
-<div class="col-md-6">
-  <div class="cat-image-container right-box" id="<%= cat2.id %>">
-    <img class="cat-image" src="<%= cat2.url %>">
-  </div>
-  <div class="center-text">
-    <p><span class="bold">Kitty Name: </span><%= cat2.name %></p>
-    <p><span class="bold">IG: </span>
-      <a href="http://www.instagram.com/<%= cat2.owner.username %>">
-        <%= cat2.owner.username %>
-      </a>
-    </p>
+  <div class="col-md-6">
+    <div class="cat-image-container right-box" id="<%= cat2.id %>">
+      <img class="cat-image" src="<%= cat2.url %>">
+    </div>
+    <div class="center-text">
+      <p><span class="bold">Kitty Name: </span><%= cat2.name %></p>
+      <p><span class="bold">IG: </span>
+        <a href="http://www.instagram.com/<%= cat2.owner.username %>">
+          <%= cat2.owner.username %>
+        </a>
+      </p>
+    </div>
   </div>
 </div>
