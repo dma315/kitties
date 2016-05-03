@@ -1,18 +1,21 @@
 $(document).ready(function() {
 
   // Click to vote functionality
-  $(document).on('click', '.left-box', voteLeftBox);
-  $(document).on('click', '.right-box', voteRightBox);  
+  $(document).on('click', '.left-box', function() {
+    voteBox("left")
+  });
+
+  $(document).on('click', '.right-box', function() {
+    voteBox("right")
+  });  
 
   // Keyboard voting functionality
   $(document).on('keyup', function(event) {
     var keynum = event.which
-    if (keynum == 37) {
-      // 37 == left-arrow
-      voteLeftBox()
-    } else if (keynum == 39) {
-      // 39 == right-arrow
-      voteRightBox()
+    if (keynum == 37) { // 37 == left-arrow
+      voteBox("left")
+    } else if (keynum == 39) { // 39 == right-arrow
+      voteBox("right")
     }
   })
 

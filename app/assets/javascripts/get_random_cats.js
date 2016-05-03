@@ -29,6 +29,6 @@ function generateVoteBoxes(array) {
     cat2: cat2
   }
   var html = JST['views/voting_boxes'](cats)
-  console.log(html)
+  // console.log(html)
   $('#vote-container').append(html)
 }
