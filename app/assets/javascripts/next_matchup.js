@@ -2,12 +2,27 @@
 // After Vote 1 -> Cache becomes 3, generate array of 10 more, cache to 8
 // Vote 2 -> Cache becomes 7, no generation of array, 
 
+function loadFirstMatchup() {
+  generateCatQueue().done(function() {
+    populateVoteBoxes();
+    var $firstMatchup = $('.vote-boxes').first();
+    $firstMatchup.fadeIn();
+  });
+}
+
 function nextMatchup() {
+  
   if (CATARRAY <= 4) {
-    generateCatQueue().done(populateVoteBoxes);
+    loadFirstMatchup();
   } else {
     populateVoteBoxes()
   }
+
+  var $voteBoxes = $('.vote-boxes')
+  var $currentMatchup = $($voteBoxes[0])
+  var $nextMatchup = $($voteBoxes[1])
+  $currentMatchup.remove().fadeOut();
+  $nextMatchup.fadeIn();
 }
 
 function generateCatQueue() {
@@ -34,6 +49,7 @@ function populateVoteBoxes() {
     cat2: cat2
   }
   var html = JST['views/voting_boxes'](cats)
-  $('#vote-container').append(html)
+  var $html = $(html).hide();
+  $('#vote-container').append($html)
 }
 
