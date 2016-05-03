@@ -24,5 +24,7 @@ function voteBox(direction) {
     data: results
   })
 
-  window.location.href = current_page 
+  // In a non-ajax world, the page reloads -- in an AJAX one, the next boxes show up
+  // window.location.href = current_page
+  generateVoteBoxes(CATARRAY)
 }

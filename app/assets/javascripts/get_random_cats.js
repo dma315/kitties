@@ -1,29 +1,22 @@
-function generateCatQueue(catArray) {
-  var catArray = []
-  $.get({
+function generateCatQueue() {
+  var request = $.get({
     url: "/cats/random_cats.json"
   })
-  .done(function(data) {
-    storeAndGenerateVotingBoxes(data, catArray)
+  var promise = request.then(function(data) {
+    if (CATARRAY.length == 0) {
+      CATARRAY = data
+    } else {
+      for (var i = 0; i < data.length; i++) {
+        CATARRAY.push(data[i])
+      }
+    };  
   })
-}
-
-function storeAndGenerateVotingBoxes(data, catArray) {
-  if (catArray.length == 0) {
-    catArray = data
-    // console.log(catArray)
-  } else {
-    for (var i = 0; i < data.length; i++) {
-      catArray.push(data[i])
-    }
-    // console.log(existingQueue)
-  };
-  generateVoteBoxes(catArray)
+  return promise
 }
 
 function generateVoteBoxes(array) {
-  var cat1 = array[0]
-  var cat2 = array[1]
+  var cat1 = array.shift()
+  var cat2 = array.shift()
   var cats = {
     cat1: cat1, 
     cat2: cat2
