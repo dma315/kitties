@@ -1,3 +1,11 @@
+function nextMatchup() {
+  if (CATARRAY.length <= 6) {
+    generateCatQueue().done(populateVoteBoxes);
+  } else {
+    populateVoteBoxes()
+  }
+}
+
 function generateCatQueue() {
   var request = $.get({
     url: "/cats/random_cats.json"
@@ -14,9 +22,9 @@ function generateCatQueue() {
   return promise
 }
 
-function generateVoteBoxes(array) {
-  var cat1 = array.shift()
-  var cat2 = array.shift()
+function populateVoteBoxes() {
+  var cat1 = CATARRAY.shift()
+  var cat2 = CATARRAY.shift()
   var cats = {
     cat1: cat1, 
     cat2: cat2
