@@ -48,10 +48,17 @@ function renderCatQueue() {
 }
 
 function renderNextMatchup() {
+  var $kittyCache = $('#kitty-cache').children()
+  // Refill the stock if we're on cats
+  if ($kittyCache.length <= 2) {
+    getCatQueueData().done(renderCatQueue)
+    console.log('refilled!')
+  }
+
+  // Move kitty from cache to matchup
   $('#matchup-container').children().remove();
-  var nextMatchup = $('#kitty-cache').children()[0]
+  var nextMatchup = $kittyCache[0]
   var $nextMatchup = $(nextMatchup).hide();
-  // console.log($nextMatchup)
   $('#matchup-container').append($nextMatchup)
   $nextMatchup.fadeIn();
 }
