@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401160837) do
+ActiveRecord::Schema.define(version: 20160505053433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,12 +33,14 @@ ActiveRecord::Schema.define(version: 20160401160837) do
     t.string   "username"
     t.string   "name"
     t.string   "token"
-    t.integer  "uid"
+    t.integer  "uid",        limit: 8
     t.string   "provider"
     t.string   "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
+
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
   create_table "votes", force: :cascade do |t|
     t.integer  "winner_id",  null: false
