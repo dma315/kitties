@@ -26,5 +26,5 @@ function voteBox(direction) {
 
   // In a non-ajax world, the page reloads -- in an AJAX one, the next boxes show up
   // window.location.href = current_page
-  nextMatchup()
+  renderNextMatchup()
 }

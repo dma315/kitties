@@ -18,3 +18,8 @@
 .cat-image:hover {
   cursor: pointer;
 }
+
+#kitty-cache {
+  position: absolute;
+  left: -10000px;
+}
