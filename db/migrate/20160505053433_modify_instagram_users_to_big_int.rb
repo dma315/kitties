@@ -1,0 +1,6 @@
+class ModifyInstagramUsersToBigInt < ActiveRecord::Migration
+  def change
+    change_column :users, :uid, :integer, :limit => 8
+    add_index :users, :uid
+  end
+end
