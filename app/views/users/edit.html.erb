@@ -1,35 +1,31 @@
-<div class="container">
+<div class="center-text">
+  <h3>Your Current Submissions (Limit 5)</h3>
+</div>
 
-  <div class="container">
-    <div class="center-text">
-      <h3>Your Current Submissions (Limit 5)</h3>
+<div class="col-md-8 col-md-offset-2 thumbnail-grid" id="submitted-cats">
+  
+  <% @current_submissions.each do |cat| %>
+    <%= render partial: "cats/submitted_cat", locals: { cat: cat } %> 
+  <% end %>
+
+</div>
+
+<div class="center-text">
+  <h3>Select a photo from your recent Instagram posts</h3>
+</div>
+
+<div class="col-md-8 col-md-offset-2 thumbnail-grid">
+  <% @insta_photos.each do |image_hash| %>
+    <div class="insta-thumbnail-container">
+      <div class="nailthumb-container">
+        <img class="insta-thumbnail" src="<%= image_hash["images"]["low_resolution"]["url"] %>" >
+      </div>
+      <div class="insta-thumbnail-overlay" data-toggle="modal" data-target="#photo-upload-modal" data-full-url="<%= image_hash["images"]["standard_resolution"]["url"] %>">
+        <span class="glyphicon glyphicon-plus-sign"></span>
+      </div>
     </div>
-
-    <div class="col-md-8 col-md-offset-2 thumbnail-grid" id="submitted-cats">
-      
-      <% @current_submissions.each do |cat| %>
-        <%= render partial: "cats/submitted_cat", locals: { cat: cat } %> 
-      <% end %>
-
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="center-text">
-      <h3>Select a photo from your recent Instagram posts</h3>
-    </div>
-
-    <div class="col-md-8 col-md-offset-2 thumbnail-grid">
-      <% @insta_photos.each do |image_hash| %>
-        <div class="insta-thumbnail-container">
-          <img class="insta-thumbnail" src="<%= image_hash["images"]["thumbnail"]["url"] %>" >
-          <div class="insta-thumbnail-overlay" data-toggle="modal" data-target="#photo-upload-modal" data-full-url="<%= image_hash["images"]["standard_resolution"]["url"] %>">
-            <span class="glyphicon glyphicon-plus-sign"></span>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
+</div>
 
   <!-- This is a generic modal and form. The custom URL for the image clicked on is injected as a hidden field on click via Javascript in a separate file -->
 
@@ -92,5 +88,3 @@
       </div>
     </div>
   </div>
-
-</div>
