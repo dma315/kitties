@@ -25,4 +25,8 @@ $(document).ready(function() {
   // Change URL of kitty upload form
   $(document).on('click', '.cat-submission-overlay', prepareCatEditForm)
 
+  $(document).on('page:change', function() {
+    $('.nailthumb-container').nailthumb()  
+  })
+
 });
