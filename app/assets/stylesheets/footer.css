@@ -4,18 +4,19 @@ html, body {
 
 .wrapper {
   min-height: 100%;
-  margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+  margin: 0 auto -40px; /* the bottom margin is the negative value of the footer's height */
 }
 
 .footer {
-  height: 50px;
+  height: 40px;
   padding: 10px;
-  background-color: #f8f8f8;
+  background-color: #4e5d6c;
+  font-size: 12px;
 }
 
 .push {
   clear: both;
-  height: 70px;
+  height: 60px;
 }
 
 .footer > .container {
