@@ -26,7 +26,7 @@ $(document).ready(function() {
   $(document).on('click', '.cat-submission-overlay', prepareCatEditForm)
 
   $(document).on('page:change', function() {
-    $('.nailthumb-container').nailthumb( {width: 250, height: 250} )  
+    $('.nailthumb-container').nailthumb()  
   })
 
 });

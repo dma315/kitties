@@ -19,7 +19,7 @@
   <div class="col-md-8 col-md-offset-2 thumbnail-grid">
     <% @insta_photos.each do |image_hash| %>
       <div class="insta-thumbnail-container">
-        <div class="nailthumb-container">
+        <div class="nailthumb-container square-250">
           <img class="insta-thumbnail" src="<%= image_hash["images"]["low_resolution"]["url"] %>" >
         </div>
         <div class="insta-thumbnail-overlay" data-toggle="modal" data-target="#photo-upload-modal" data-full-url="<%= image_hash["images"]["standard_resolution"]["url"] %>">
