@@ -5,13 +5,6 @@
   border-radius: 10px;
 }
 
-.cat-image {
-  max-height: 100%;
-  max-width: 100%;
-  border-radius: 10px;
-  margin: 0 auto;
-}
-
 .cat-image:hover {
   cursor: pointer;
 }
