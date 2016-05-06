@@ -6,15 +6,17 @@
 
 .insta-thumbnail-container {
   position: relative;
-}
-
-.insta-thumbnail {
   margin: 10px;
 }
 
+#recent-instagram-photos {
+  clear: both;
+  padding-top: 20px;
+}
+
 .insta-thumbnail-overlay, .cat-submission-overlay {
-  height: 150px;
-  width: 150px;
+  height: 250px;
+  width: 250px;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -25,9 +27,6 @@
   font-size: 2em;
 }
 
-.insta-thumbnail-overlay {
-  margin: 10px;
-}
 
 .insta-thumbnail-overlay:hover, .cat-submission-overlay:hover {
   cursor: pointer;
@@ -36,8 +35,6 @@
 }
 
 .cat-submission-container {
-  height: 150px;
-  width: 150px;
   margin: 10px;
   overflow: hidden;
   position: relative;
