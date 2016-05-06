@@ -32,9 +32,13 @@ gem 'omniauth-instagram'
 # Bootstrap attempt again
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# JS templates for the front end
 gem 'ejs'
 
 gem 'faker'
+
+# Google APIs -- in particular for Vision!
+gem 'google-api-client'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
