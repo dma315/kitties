@@ -17,6 +17,7 @@
 .insta-thumbnail-overlay, .cat-submission-overlay {
   height: 250px;
   width: 250px;
+  border-radius: 10px;
   position: absolute;
   left: 0px;
   top: 0px;

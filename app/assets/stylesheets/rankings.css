@@ -3,6 +3,7 @@
   display: flex;
   margin: 10px;
   border: 1px solid white;
+  border-radius: 10px;
 }
 
 .cat-ranking-image-container, .cat-ranking-info-container {

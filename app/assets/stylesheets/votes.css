@@ -2,11 +2,13 @@
   display: flex;
   margin: 20px auto;
   position: relative;
+  border-radius: 10px;
 }
 
 .cat-image {
   max-height: 100%;
   max-width: 100%;
+  border-radius: 10px;
   margin: 0 auto;
 }
 
