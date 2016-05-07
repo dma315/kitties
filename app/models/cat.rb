@@ -1,5 +1,7 @@
 class Cat < ActiveRecord::Base
 
+  attr_accessor :has_cat
+
   has_many :winning_votes, foreign_key: :winner_id, class_name: 'Vote'
   has_many :losing_votes, foreign_key: :loser_id, class_name: 'Vote'
   belongs_to :owner, class_name: 'User'
@@ -8,6 +10,7 @@ class Cat < ActiveRecord::Base
   validates :name, presence: { message: "cannot be blank" }
   validates :terms_accepted, inclusion: {in: [true], message: "cannot be unchecked"}
 
+  validate :image_has_cat, :on => :create
   # validate :limit_five_cats, :on => :create
 
   def update_elo_score(opponent, win)
@@ -25,6 +28,12 @@ class Cat < ActiveRecord::Base
   end
 
   private
+
+  def image_has_cat
+    if !self.has_cat
+      errors[:base] << "Sorry, Google image recognition does not think this image has a cat. For more information, see our FAQs page."
+    end
+  end
 
   def limit_five_cats
     previous_count = self.owner.cats.count

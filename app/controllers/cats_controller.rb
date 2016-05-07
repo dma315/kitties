@@ -9,8 +9,8 @@ class CatsController < ApplicationController
   def create
     @cat = current_user.cats.new(cat_params)
     @cat.elo_score = 1000
+    p @cat.has_cat = has_cat?(@cat.url)
     @cat.save
-    p @cat.errors
     respond_to do |format|
       format.js {}
     end
