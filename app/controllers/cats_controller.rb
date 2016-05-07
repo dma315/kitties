@@ -4,7 +4,9 @@ class CatsController < ApplicationController
 
   def rankings
     @cats = Cat.order(elo_score: :desc).limit(10)
-    @cats = @cats + @cats if @cats.length < 10
+    if @cats.length < 10
+      @cats = @cats + @cats
+    end
   end
 
   def create
