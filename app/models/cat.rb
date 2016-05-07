@@ -1,5 +1,7 @@
 class Cat < ActiveRecord::Base
 
+  attr_accessor :has_cat
+
   has_many :winning_votes, foreign_key: :winner_id, class_name: 'Vote'
   has_many :losing_votes, foreign_key: :loser_id, class_name: 'Vote'
   belongs_to :owner, class_name: 'User'
@@ -8,7 +10,8 @@ class Cat < ActiveRecord::Base
   validates :name, presence: { message: "cannot be blank" }
   validates :terms_accepted, inclusion: {in: [true], message: "cannot be unchecked"}
 
-  # validate :limit_five_cats, :on => :create
+  validate :image_has_cat, :on => :create
+  validate :limit_five_cats, :on => :create
 
   def update_elo_score(opponent, win)
     k_factor = 32
@@ -25,6 +28,12 @@ class Cat < ActiveRecord::Base
   end
 
   private
+
+  def image_has_cat
+    if !self.has_cat
+      errors[:base] << "Sorry, there does not appear to be a cat in this image. Please try another image. If you believe this to be a mistake, please reach out to us."
+    end
+  end
 
   def limit_five_cats
     previous_count = self.owner.cats.count

@@ -2,13 +2,16 @@
   var $errors = $("#cat-upload-errors")
   $errors.children().remove();
   <% @cat.errors.full_messages.each do |error| %>
-    var $p = $("<p>").text("<%= error %>")
+    var $p = $("<p>").text("<%= j error %>")
     $errors.append($p)
   <% end %>
+  waitingForGoogle.stop(); // waitingForGoogle is the spinner
   $errors.fadeIn()
 <% else %>
   $("#photo-upload-modal").modal("hide")
   var newCatHTML = "<%= j render partial: 'cats/submitted_cat', locals: {cat: @cat} %>"
   $("#submitted-cats").append(newCatHTML)
+  $('.nailthumb-container').nailthumb()
+  waitingForGoogle.stop(); // waitingForGoogle is the spinner
   resetCatModalForm();
 <% end %>

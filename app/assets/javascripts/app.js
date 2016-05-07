@@ -25,8 +25,19 @@ $(document).ready(function() {
   // Change URL of kitty upload form
   $(document).on('click', '.cat-submission-overlay', prepareCatEditForm)
 
+  // Load images in perfect squares using NailThumb plugin
   $(document).on('page:change', function() {
     $('.nailthumb-container').nailthumb()  
+  })
+  
+  $("#buttonSelector").click(function () {
+     $(this).button('loading');
+     // Long waiting operation here
+     // $(this).button('reset');
+  });
+
+  $(document).on('click', '#submit-kitty-button', function() {
+    waitingForGoogle = startSpinner('photo-upload-modal-dialog')
   })
 
 });

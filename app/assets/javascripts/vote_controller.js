@@ -41,7 +41,7 @@ function animateVote(direction) {
     $loser = $matchupContainer.find(".left-box")
   }
   $winner.css({
-    "transform": "scale(1.05,1.05)",
+    "transform": "scale(1.1,1.1)",
     "box-shadow": "0 0 30px white",
     "transition": "0.2s"
   })
