@@ -11,7 +11,7 @@ class Cat < ActiveRecord::Base
   validates :terms_accepted, inclusion: {in: [true], message: "cannot be unchecked"}
 
   validate :image_has_cat, :on => :create
-  # validate :limit_five_cats, :on => :create
+  validate :limit_five_cats, :on => :create
 
   def update_elo_score(opponent, win)
     k_factor = 32
@@ -31,7 +31,7 @@ class Cat < ActiveRecord::Base
 
   def image_has_cat
     if !self.has_cat
-      errors[:base] << "Sorry, Google image recognition does not think this image has a cat. For more information, see our FAQs page."
+      errors[:base] << "Sorry, Google's image recognition software does not think this image has a cat. Please try another image."
     end
   end
 

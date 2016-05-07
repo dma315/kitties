@@ -10,5 +10,6 @@
   $("#photo-upload-modal").modal("hide")
   var newCatHTML = "<%= j render partial: 'cats/submitted_cat', locals: {cat: @cat} %>"
   $("#submitted-cats").append(newCatHTML)
+  $('.nailthumb-container').nailthumb()
   resetCatModalForm();
 <% end %>
