@@ -31,7 +31,7 @@ class Cat < ActiveRecord::Base
 
   def image_has_cat
     if !self.has_cat
-      errors[:base] << "Sorry, Google's image recognition software does not think this image has a cat. Please try another image."
+      errors[:base] << "Sorry, there does not appear to be a cat in this image. Please try another image. If you believe this to be a mistake, please reach out to us."
     end
   end
 

@@ -32,7 +32,7 @@
   <!-- This is a generic modal and form. The custom URL for the image clicked on is injected as a hidden field on click via Javascript in a separate file -->
 
   <div id="photo-upload-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog" id="photo-upload-modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -50,7 +50,7 @@
             <div class="form-group">
               <%= f.check_box :terms_accepted, {}, true, false %> By checking this box, I agree to to the upload terms and <%= link_to "privacy policy", privacy_path, :target => "_blank" %> of ELO Kitty
             </div>
-            <%= f.submit "Submit Kitty", class: "btn btn-primary" %>
+            <%= f.submit "Submit Kitty", class: "btn btn-primary", id: "submit-kitty-button" %>
           <% end %>
         </div>
         <div class="modal-footer">

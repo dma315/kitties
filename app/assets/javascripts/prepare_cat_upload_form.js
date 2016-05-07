@@ -9,6 +9,5 @@ function injectCatURLs($imageClicked) {
   var fullURL = $thisImage.data('full-url');
   $('#full-url').val(fullURL)
   var thumbnailURL = $thisImage.data('thumbnail-url')
-  console.log(thumbnailURL)
   $('#thumbnail-url').val(thumbnailURL)
 }
