@@ -4,6 +4,7 @@ class CatsController < ApplicationController
 
   def rankings
     @cats = Cat.order(elo_score: :desc).limit(10)
+    @cats.shift if @cats.length % 2 != 0 # Only applies when under 10 cats and there's an odd number, stupid
   end
 
   def create
