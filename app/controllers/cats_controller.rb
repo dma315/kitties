@@ -1,5 +1,7 @@
 class CatsController < ApplicationController
 
+  include GoogleVisionHelper
+
   def rankings
     @cats = Cat.order(elo_score: :desc).limit(10)
   end
@@ -8,6 +10,7 @@ class CatsController < ApplicationController
     @cat = current_user.cats.new(cat_params)
     @cat.elo_score = 1000
     @cat.save
+    p @cat.errors
     respond_to do |format|
       format.js {}
     end

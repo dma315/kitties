@@ -2,7 +2,7 @@
   var $errors = $("#cat-upload-errors")
   $errors.children().remove();
   <% @cat.errors.full_messages.each do |error| %>
-    var $p = $("<p>").text("<%= error %>")
+    var $p = $("<p>").text("<%= j error %>")
     $errors.append($p)
   <% end %>
   $errors.fadeIn()

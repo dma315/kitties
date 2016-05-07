@@ -22,7 +22,7 @@
         <div class="nailthumb-container square-250">
           <img class="image-fit" src="<%= image_hash["images"]["low_resolution"]["url"] %>" >
         </div>
-        <div class="insta-thumbnail-overlay" data-toggle="modal" data-target="#photo-upload-modal" data-full-url="<%= image_hash["images"]["standard_resolution"]["url"] %>">
+        <div class="insta-thumbnail-overlay" data-toggle="modal" data-target="#photo-upload-modal" data-full-url="<%= image_hash["images"]["standard_resolution"]["url"] %>" data-thumbnail-url="<%= image_hash["images"]["low_resolution"]["url"] %>">
           <span class="glyphicon glyphicon-plus-sign"></span>
         </div>
       </div>
