@@ -31,7 +31,7 @@ class Cat < ActiveRecord::Base
 
   def image_has_cat
     if !self.has_cat
-      errors[:base] << "Sorry, there does not appear to be a cat in this image. Please try another image. If you believe this to be a mistake, please reach out to us."
+      errors[:base] << "Sorry, there does not appear to be a cat in this image. Please try another image. Check out our FAQs for more information."
     end
   end
 
