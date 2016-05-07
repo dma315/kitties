@@ -4,9 +4,6 @@ class CatsController < ApplicationController
 
   def rankings
     @cats = Cat.order(elo_score: :desc).limit(10)
-    if @cats.length < 10
-      @cats = @cats + @cats
-    end
   end
 
   def create
@@ -36,6 +33,7 @@ class CatsController < ApplicationController
   def random_cats
     return if Cat.count == 0
     @all_cats = Cat.limit(10).order("RANDOM()") # Make this the query below
+    @all_cats = @all_cats + @all_cats if @all_cats.length < 10 # This is a dumb fix for when there are an odd number of cats < 10 total
     respond_to do |format|
       format.json { render json: @all_cats, include: [:owner] }
     end
