@@ -44,7 +44,7 @@
 /* Large Devices, Wide Screens */
 @media (min-width : 1200px) {
   .square-large {
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
   }
 }
