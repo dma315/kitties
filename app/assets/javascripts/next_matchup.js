@@ -2,8 +2,8 @@
 // Move one up from cache
 // Check if cache has 2 or fewer matchups
 
-function renderInitialMatchup(_matchup_id = null) {
-  var matchup_id = _matchup_id
+function renderInitialMatchup(matchupID) {
+  var matchupID = matchupID || nil
   getCatQueueData(matchup_id).done(function() {
     renderCatQueue();
     renderNextMatchup();
@@ -11,11 +11,11 @@ function renderInitialMatchup(_matchup_id = null) {
 }
 
 // AJAX request to fill the CATARRAY
-function getCatQueueData(_matchup_id = null) {
-  var matchup_id = _matchup_id
+function getCatQueueData(matchupID) {
+  var matchupID = matchupID || nil
   var request
-  if (matchup_id) {
-    var pathname = "/cats/matchup/" + matchup_id + ".json"
+  if (matchupID) {
+    var pathname = "/cats/matchup/" + matchupID + ".json"
     // console.log(pathname)
     request = $.get({
       url: pathname
