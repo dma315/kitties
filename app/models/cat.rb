@@ -1,6 +1,6 @@
 class Cat < ActiveRecord::Base
 
-  attr_accessor :has_cat
+  attr_accessor :has_cat # Added as virtual attribute when checking if there is a cat
 
   has_many :winning_votes, foreign_key: :winner_id, class_name: 'Vote'
   has_many :losing_votes, foreign_key: :loser_id, class_name: 'Vote'
@@ -27,6 +27,9 @@ class Cat < ActiveRecord::Base
     self.save!
   end
 
+  def share_url
+  end
+
   private
 
   def image_has_cat
@@ -45,6 +48,5 @@ class Cat < ActiveRecord::Base
   def to_param
     self.matchup_id
   end
-
 
 end
