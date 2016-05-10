@@ -2,18 +2,30 @@
 // Move one up from cache
 // Check if cache has 2 or fewer matchups
 
-function renderInitialMatchup() {
-  getCatQueueData().done(function() {
+function renderInitialMatchup(_matchup_id = null) {
+  var matchup_id = _matchup_id
+  getCatQueueData(matchup_id).done(function() {
     renderCatQueue();
     renderNextMatchup();
   });
 }
 
 // AJAX request to fill the CATARRAY
-function getCatQueueData() {
-  var request = $.get({
-    url: "/cats/random_cats.json"
-  })
+function getCatQueueData(_matchup_id = null) {
+  var matchup_id = _matchup_id
+  var request
+  if (matchup_id) {
+    var pathname = "/cats/matchup/" + matchup_id + ".json"
+    // console.log(pathname)
+    request = $.get({
+      url: pathname
+    })
+  } else {
+    request = $.get({
+      url: "/cats/random_cats.json"
+    })  
+  }
+  
   var promise = request.then(function(data) {
     if (CATARRAY.length == 0) {
       CATARRAY = data

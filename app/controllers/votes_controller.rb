@@ -1,5 +1,8 @@
 class VotesController < ApplicationController
 
+  def new
+  end
+
   def create
     winner_id = params["winner_id"].to_i
     loser_id = params["loser_id"].to_i
