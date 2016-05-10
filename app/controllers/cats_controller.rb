@@ -44,8 +44,8 @@ class CatsController < ApplicationController
   def matchup
     @cat = Cat.find_by(matchup_id: params[:id])
     get_random_cats(9)
-    p @cat
     @all_cats.unshift(@cat)
+    even_number_of_cats
     respond_to do |format|
       format.html { render 'votes/new' }
       format.json { render json: @all_cats, include: [:owner] }
