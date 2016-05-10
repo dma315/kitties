@@ -17,7 +17,6 @@ class UsersController < ApplicationController
     response = http.request(request)
     response_hash = JSON.parse(response.body)
     @insta_photos = response_hash["data"]
-    p @insta_photos.first
 
     @current_submissions = current_user.cats
   end
