@@ -7,7 +7,7 @@ module CatsHelper
   end
 
   def even_number_of_cats
-    if @all_cats % 2 != 0
+    if @all_cats.length % 2 != 0
       @all_cats = @all_cats + @all_cats
     end
   end
