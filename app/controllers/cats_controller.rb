@@ -10,7 +10,8 @@ class CatsController < ApplicationController
   def create
     @cat = current_user.cats.new(cat_params)
     @cat.elo_score = 1000
-    p @cat.has_cat = has_cat?(@cat.url)
+    @cat.matchup_id = SecureRandom.uuid
+    @cat.has_cat = has_cat?(@cat.url)
     @cat.save
     respond_to do |format|
       format.js {}
