@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require nailthumb/jquery.nailthumb.1.1.min
+//= require clipboard/dist/clipboard.min
 //= require spin/spin.min
 //= require bootstrap-sprockets
 //= require turbolinks

@@ -1,6 +1,7 @@
 class CatsController < ApplicationController
 
   include GoogleVisionHelper
+  include CatsHelper
 
   def rankings
     @cats = Cat.order(elo_score: :desc).limit(10)
@@ -31,9 +32,7 @@ class CatsController < ApplicationController
   end
 
   def random_cats
-    return if Cat.count == 0
-    @all_cats = Cat.limit(10).order("RANDOM()") # Make this the query below
-    @all_cats = @all_cats + @all_cats if @all_cats.length < 10 # This is a dumb fix for when there are an odd number of cats < 10 total
+    get_random_cats(10)
     respond_to do |format|
       format.json { render json: @all_cats, include: [:owner] }
     end
@@ -41,9 +40,23 @@ class CatsController < ApplicationController
     # https://www.periscopedata.com/blog/how-to-sample-rows-in-sql-273x-faster.html
   end
 
+  def matchup
+    @cat = Cat.find_by(matchup_id: params[:id])
+    get_random_cats(9)
+    p @cat
+    @all_cats.unshift(@cat)
+    respond_to do |format|
+      format.html { render 'votes/new' }
+      format.json { render json: @all_cats, include: [:owner] }
+    end
+  end
+
+  # 138a149b-554d-41e3-9378-233f79e9904c
+
   private
 
   def cat_params
     params.require(:cat).permit(:url, :thumbnail_url, :name, :terms_accepted)
   end
+
 end

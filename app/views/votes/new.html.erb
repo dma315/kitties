@@ -11,5 +11,9 @@
 
 <script>
   CATARRAY = []
-  renderInitialMatchup();
+  <% if @cat %>
+    renderInitialMatchup("<%= @cat.matchup_id %>");
+  <% else %>
+    renderInitialMatchup();
+  <% end %>
 </script>
