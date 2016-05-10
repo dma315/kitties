@@ -29,9 +29,11 @@ function getCatQueueData(matchupID) {
   var promise = request.then(function(data) {
     if (CATARRAY.length == 0) {
       CATARRAY = data
+      console.log(CATARRAY)
     } else {
       for (var i = 0; i < data.length; i++) {
         CATARRAY.push(data[i])
+        console.log(CATARRAY)
       }
     };  
   })
