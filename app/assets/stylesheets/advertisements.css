@@ -1,0 +1,16 @@
+#banner-container {
+  text-align: center;
+}
+
+.amzn-native-container {
+  margin: 0 auto;
+}
+
+.amzn-native-header-text {
+  color: white;
+}
+
+.amzn-native-search-bar-content {
+  float: none !important;
+  margin: 0 auto !important;
+}
