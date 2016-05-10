@@ -41,6 +41,10 @@ class CatsController < ApplicationController
     # https://www.periscopedata.com/blog/how-to-sample-rows-in-sql-273x-faster.html
   end
 
+  def matchup
+    @cat = Cat.find_by(:matchup_id, params[:id])
+  end
+
   private
 
   def cat_params

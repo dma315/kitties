@@ -40,7 +40,10 @@ class Cat < ActiveRecord::Base
     if previous_count >= 5
       errors[:base] << "Sorry, you cannot submit more than 5 cats!"
     end
+  end
 
+  def to_param
+    self.matchup_id
   end
 
 

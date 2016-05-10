@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505054055) do
+ActiveRecord::Schema.define(version: 20160510001624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 20160505054055) do
     t.integer  "owner_id"
     t.boolean  "terms_accepted"
     t.string   "thumbnail_url"
+    t.string   "matchup_id"
   end
 
+  add_index "cats", ["matchup_id"], name: "index_cats_on_matchup_id", using: :btree
   add_index "cats", ["owner_id"], name: "index_cats_on_owner_id", using: :btree
 
   create_table "users", force: :cascade do |t|
