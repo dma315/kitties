@@ -4,7 +4,47 @@
   border-radius: 10px;
 }
 
-.square-400 {
+.square-large {
+  width: 400px;
   height: 400px;
-  width: 400px; 
+}
+
+/* Custom, iPhone Retina */ 
+@media (min-width : 320px) {
+  .square-large {
+    width: 350px;
+    height: 350px;
+  }   
+}
+
+/* Extra Small Devices, Phones */ 
+@media (min-width : 480px) {
+  .square-large {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+/* Small Devices, Tablets */
+@media (min-width : 768px) {
+  .square-large {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media (min-width : 992px) {
+  .square-large {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media (min-width : 1200px) {
+  .square-large {
+    width: 450px;
+    height: 450px;
+  }
 }
