@@ -1,0 +1,49 @@
+/* Custom, iPhone Retina */ 
+@media (min-width : 320px) {
+  .double-text-size-mobile {
+    font-size: 2em;
+  }   
+  .triple-text-size-mobile {
+    font-size: 3em;
+  }
+}
+
+/* Extra Small Devices, Phones */ 
+@media (min-width : 480px) {
+  .double-text-size-mobile {
+    font-size: 2em;
+  }  
+  .triple-text-size-mobile {
+    font-size: 3em;
+  } 
+}
+
+/* Small Devices, Tablets */
+@media (min-width : 768px) {
+  .double-text-size-mobile {
+    font-size: 2em;
+  }   
+  .triple-text-size-mobile {
+    font-size: 3em;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media (min-width : 992px) {
+  .double-text-size-mobile {
+    font-size: 1em;
+  }
+  .triple-text-size-mobile {
+    font-size: 1em;
+  }   
+}
+
+/* Large Devices, Wide Screens */
+@media (min-width : 1200px) {
+  .double-text-size-mobile {
+    font-size: 1em;
+  }
+  .triple-text-size-mobile {
+    font-size: 1em;
+  }   
+}
