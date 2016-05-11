@@ -29,7 +29,7 @@
 }
 
 
-.insta-thumbnail-overlay:hover, .cat-submission-overlay:hover, .insta-thumbnail-overlay:focus, .cat-submission-overlay:focus {
+.insta-thumbnail-overlay:hover, .cat-submission-overlay:hover {
   cursor: pointer;
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
   color: white;

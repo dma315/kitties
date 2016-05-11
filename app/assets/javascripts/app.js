@@ -40,4 +40,6 @@ $(document).ready(function() {
     waitingForGoogle = startSpinner('photo-upload-modal-dialog')
   })
 
+  $(body).bind('touchstart', function() {})
+
 });
