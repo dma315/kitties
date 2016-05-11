@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'votes#new'
 
   # Users
-  resources :users, only: [:edit]
+  # resources :users, only: [:edit]
+  get 'users/:id/edit' => 'users#edit', :as => :edit_user, :constraints => { :id => /[\w+\.]+/ }
 
   # Votes
   resources :votes, only: [:new, :create]
