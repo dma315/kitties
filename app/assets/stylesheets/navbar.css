@@ -33,4 +33,12 @@
     .collapse.in{
         display: block !important;
     }
+
+    .navbar, .navbar-brand, .navbar-default .dropdown-menu>li>a {
+        font-size: 24px;
+    }
+
+    .icon-bar {
+        height: 4px !important;
+    }
 }
