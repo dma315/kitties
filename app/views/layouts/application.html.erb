@@ -49,7 +49,9 @@
             <li><%= link_to "Your Kitties", edit_user_path(current_user), class: "navbar-font-color" %></li>
             <li><%= link_to "Logout", logout_path, method: "delete", class: "navbar-font-color" %></li>
           <% else %>
-            <li><%= link_to "Instagram Login", "/auth/instagram", class: "navbar-font-color" %></li>
+            <li data-target="#instagram-login-modal"><% link_to "Submit Your Kitty", "/auth/instagram", class: "navbar-font-color" %>
+              <a href="/#" data-toggle="modal" data-target="#instagram-login-modal">Submit Your Kitty</a>
+            </li>
           <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -68,6 +70,27 @@
     <p>&#169; ELO Kitty 2016</p>
   </div>
 </footer>
+
+<div id="instagram-login-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Share your kitty!</h4>
+        </div>
+        <div class="modal-body">
+          <p>To upload your kitty, we ask that you login with Instagram in order to access your recent photo.</p>
+          <p>For your security, we <span class="bold underline">never store your password.</span> Only you can see your photos until you decide to share them with the community.</p>
+          <a href="/auth/instagram">
+            <button class="btn btn-primary">Login with Instagram</button>
+          </a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 </body>
