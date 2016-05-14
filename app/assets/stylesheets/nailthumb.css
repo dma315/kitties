@@ -12,24 +12,24 @@
 /* Custom, iPhone Retina */ 
 @media (min-width : 320px) {
   .square-large {
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
   }   
 }
 
 /* Extra Small Devices, Phones */ 
 @media (min-width : 480px) {
   .square-large {
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
   }
 }
 
 /* Small Devices, Tablets */
 @media (min-width : 768px) {
   .square-large {
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
   }
 }
 

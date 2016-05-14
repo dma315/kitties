@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -36,6 +37,7 @@
       enable_page_level_ads: true
     });
   </script>
+  
 </head>
 <body>
 
@@ -79,20 +81,33 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <div class="container" id="banner-container">
-    <!--<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=elokitty0a-20&o=1&p=48&l=ur1&category=pets&banner=1STB1X9W54CP5WG6G0G2&f=ifr&linkID=K4RHLT55LCX4SE22" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;max-width:800px;max-height:600px;" frameborder="0"></iframe>-->
+  <div class="container banner-container">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- Test Ad #1 -->
+    <!-- ELO Kitty Responsive -->
     <ins class="adsbygoogle"
-         style="display:inline-block;width:728px;height:90px"
+         style="display:block"
          data-ad-client="ca-pub-7065306579181165"
-         data-ad-slot="3912521331"></ins>
+         data-ad-slot="4606865339"
+         data-ad-format="auto"></ins>
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   </div>
 
   <%= yield %>
+
+  <div class="container banner-container">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ELO Kitty Responsive -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7065306579181165"
+         data-ad-slot="4606865339"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
 
   <div class="push">
   </div>

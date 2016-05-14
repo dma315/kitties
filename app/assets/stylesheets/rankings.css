@@ -1,14 +1,13 @@
 .cat-ranking-container {
   width: 100%;
-  display: flex;
+  display: inline-block;
   margin: 10px;
   border: 1px solid white;
   border-radius: 10px;
 }
 
-.cat-ranking-image-container, .cat-ranking-info-container {
-  width: 50%;
-  box-sizing: border-box;
+.cat-ranking-image-container {
+  margin: 10px auto;
 }
 
 .cat-ranking-info-container {
